@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-28T01:59:20 EET" name="Default suite" finished-at="2025-07-28T01:59:23 EET" duration-ms="2946">
+  <suite started-at="2025-07-31T01:30:55 EET" name="Default suite" finished-at="2025-07-31T01:30:58 EET" duration-ms="2777">
     <groups>
     </groups>
-    <test started-at="2025-07-28T01:59:20 EET" name="Default test" finished-at="2025-07-28T01:59:23 EET" duration-ms="2946">
-      <class name="Login">
-        <test-method is-config="true" signature="setup()[pri:0, instance:Login@687ef2e0]" started-at="2025-07-28T01:59:20 EET" name="setup" finished-at="2025-07-28T01:59:23 EET" duration-ms="2848" status="PASS">
+    <test started-at="2025-07-31T01:30:55 EET" name="Default test" finished-at="2025-07-31T01:30:58 EET" duration-ms="2777">
+      <class name="myTestCasese">
+        <test-method is-config="true" signature="setup()[pri:0, instance:myTestCasese@1e636ea3]" started-at="2025-07-31T01:30:55 EET" name="setup" finished-at="2025-07-31T01:30:58 EET" duration-ms="2612" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="checkTheLangaueisEn()[pri:0, instance:Login@687ef2e0]" started-at="2025-07-28T01:59:23 EET" name="checkTheLangaueisEn" finished-at="2025-07-28T01:59:23 EET" duration-ms="52" status="PASS">
+        <test-method signature="checkTheCurrncyisSAR()[pri:0, instance:myTestCasese@1e636ea3]" started-at="2025-07-31T01:30:58 EET" name="checkTheCurrncyisSAR" finished-at="2025-07-31T01:30:58 EET" duration-ms="43" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkTheCurrncyisSAR -->
+        <test-method signature="checkTheLangaueisEn()[pri:0, instance:myTestCasese@1e636ea3]" started-at="2025-07-31T01:30:58 EET" name="checkTheLangaueisEn" finished-at="2025-07-31T01:30:58 EET" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkTheLangaueisEn -->
-      </class> <!-- Login -->
+        <test-method signature="checkTheMobileNo()[pri:0, instance:myTestCasese@1e636ea3]" started-at="2025-07-31T01:30:58 EET" name="checkTheMobileNo" finished-at="2025-07-31T01:30:58 EET" duration-ms="29" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkTheMobileNo -->
+      </class> <!-- myTestCasese -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

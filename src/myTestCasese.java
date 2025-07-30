@@ -13,6 +13,9 @@ public class myTestCasese {
 WebDriver driver = new ChromeDriver();
  String URL = "https://global.almosafer.com/en";
  String expectedLang = "en";
+ String expectedCurrnecy = "SAR";
+ String expectedMobileno = "+966554400000";
+ 
  
  
  @BeforeTest
@@ -30,12 +33,20 @@ WebDriver driver = new ChromeDriver();
 	 Assert.assertEquals(actualLang, expectedLang);
  }
  
+ @Test 
+ public void checkTheCurrncyisSAR () {
+	  
+	 String theactualDefaultCurrency =driver.findElement(By.cssSelector(".__ds__comp.undefined.MuiBox-root.alm-desktop-16mmnl8")).getText();
+	 Assert.assertEquals(theactualDefaultCurrency, expectedCurrnecy);	 
+}
  
 
+@Test 
+public void checkTheMobileNo () {
+  String ActualMobileNo = driver.findElement(By.cssSelector(".__ds__comp.undefined.MuiBox-root.alm-desktop-h0bow9")).getText();
+  
+  Assert.assertEquals(ActualMobileNo, expectedMobileno);
 	
-
 	
-	
-	
-	
+}
 }
