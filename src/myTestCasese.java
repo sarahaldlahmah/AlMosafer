@@ -15,8 +15,7 @@ WebDriver driver = new ChromeDriver();
  String expectedLang = "en";
  String expectedCurrnecy = "SAR";
  String expectedMobileno = "+966554400000";
- 
- 
+ boolean expectedQitafLogo = true;
  
  @BeforeTest
  public void setup () {
@@ -46,7 +45,18 @@ public void checkTheMobileNo () {
   String ActualMobileNo = driver.findElement(By.cssSelector(".__ds__comp.undefined.MuiBox-root.alm-desktop-h0bow9")).getText();
   
   Assert.assertEquals(ActualMobileNo, expectedMobileno);
+	}
+
+
+@Test
+public void checkQitafLogo () {
+	boolean actualQitafLogo = driver.findElement(By.xpath("//img [@alt = 'qitaf']")).isDisplayed();
+	Assert.assertEquals(actualQitafLogo, expectedQitafLogo);
 	
-	
+		
 }
+
+
+
+
 }
