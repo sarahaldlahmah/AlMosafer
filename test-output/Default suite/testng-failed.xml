@@ -5,7 +5,7 @@
     <classes>
       <class name="myTestCasese">
         <methods>
-          <include name="checkTheMobileNo"/>
+          <include name="checkStaysTabnotSelected"/>
           <include name="setup"/>
         </methods>
       </class> <!-- myTestCasese -->

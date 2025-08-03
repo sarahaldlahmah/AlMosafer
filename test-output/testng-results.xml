@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="5" total="7" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-01T01:22:45 EET" name="Default suite" finished-at="2025-08-01T01:22:51 EET" duration-ms="6535">
+  <suite started-at="2025-08-04T01:02:27 EET" name="Default suite" finished-at="2025-08-04T01:02:30 EET" duration-ms="2922">
     <groups>
     </groups>
-    <test started-at="2025-08-01T01:22:45 EET" name="Default test" finished-at="2025-08-01T01:22:51 EET" duration-ms="6535">
+    <test started-at="2025-08-04T01:02:27 EET" name="Default test" finished-at="2025-08-04T01:02:30 EET" duration-ms="2922">
       <class name="myTestCasese">
-        <test-method is-config="true" signature="setup()[pri:0, instance:myTestCasese@1e636ea3]" started-at="2025-08-01T01:22:45 EET" name="setup" finished-at="2025-08-01T01:22:51 EET" duration-ms="6304" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:myTestCasese@4ce7fffa]" started-at="2025-08-04T01:02:27 EET" name="setup" finished-at="2025-08-04T01:02:30 EET" duration-ms="2784" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="checkQitafLogo()[pri:0, instance:myTestCasese@1e636ea3]" started-at="2025-08-01T01:22:51 EET" name="checkQitafLogo" finished-at="2025-08-01T01:22:51 EET" duration-ms="75" status="PASS">
+        <test-method signature="checkDepartureDate()[pri:1, instance:myTestCasese@4ce7fffa]" started-at="2025-08-04T01:02:30 EET" name="checkDepartureDate" finished-at="2025-08-04T01:02:30 EET" duration-ms="70" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkQitafLogo -->
-        <test-method signature="checkTheCurrncyisSAR()[pri:0, instance:myTestCasese@1e636ea3]" started-at="2025-08-01T01:22:51 EET" name="checkTheCurrncyisSAR" finished-at="2025-08-01T01:22:51 EET" duration-ms="38" status="PASS">
+        </test-method> <!-- checkDepartureDate -->
+        <test-method signature="checkReturneDate()[pri:2, instance:myTestCasese@4ce7fffa]" started-at="2025-08-04T01:02:30 EET" name="checkReturneDate" finished-at="2025-08-04T01:02:30 EET" duration-ms="26" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkTheCurrncyisSAR -->
-        <test-method signature="checkTheLangaueisEn()[pri:0, instance:myTestCasese@1e636ea3]" started-at="2025-08-01T01:22:51 EET" name="checkTheLangaueisEn" finished-at="2025-08-01T01:22:51 EET" duration-ms="35" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkTheLangaueisEn -->
-        <test-method signature="checkTheMobileNo()[pri:0, instance:myTestCasese@1e636ea3]" started-at="2025-08-01T01:22:51 EET" name="checkTheMobileNo" finished-at="2025-08-01T01:22:51 EET" duration-ms="32" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkTheMobileNo -->
+        </test-method> <!-- checkReturneDate -->
       </class> <!-- myTestCasese -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
