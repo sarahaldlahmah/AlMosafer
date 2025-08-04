@@ -1,3 +1,4 @@
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 
 import java.time.Duration;
@@ -66,39 +67,46 @@ public void checkStaysTabnotSelected () {
 	 Assert.assertEquals(hotelstabisHidden, expectedHotelsTabnotSelected);
 	}
 
+
 @Test (priority = 1)
-public void checkDepartureDate () {
+public void ChecktheDepartureDateisCorrect () {  //Wed, 6 Aug
 	
-	
-	LocalDate today = LocalDate.now();  //Wed, 6 Aug
+	LocalDate today = LocalDate.now();
 	int expectedDepartureDate = today.plusDays(1).getDayOfMonth();
-	String DepartureDate = driver.findElement(By.id("testIdPickerPrefix__DatePicker__DepartureDate")).getAttribute("value");
-	String [] parts = DepartureDate.split(",");
-	String dateOnly = parts[1].trim();
-	String []part2 = dateOnly.split(" ");
-	String dateonly2= part2[0];
-	int ActualReturnDate = Integer.parseInt(dateonly2);
-	Assert.assertEquals(ActualReturnDate, expectedDepartureDate);
+	
+	
+	String dateandDay = driver.findElement(By.id("testIdPickerPrefix__DatePicker__DepartureDate")).getAttribute("value");
+	String []SplitDate = dateandDay.split(",");
+	String datewithMonth = SplitDate[1].trim();
+	String[] datewithoutMonth = datewithMonth.split(" ");
+	String Day = datewithoutMonth[0];
+	//System.out.print(Day);
+	int actualfinalDay = Integer.parseInt(Day);
+	assertEquals(actualfinalDay,expectedDepartureDate);	
+}
+@Test  (priority = 2)
+public void CheckTheReturnDateisCorrect () {
+	
+	LocalDate today2 = LocalDate.now();
+	int expectedReturnDate = today2.plusDays(2).getDayOfMonth();
+	
+	String ReturnFullDate = driver.findElement(By.id("testIdPickerPrefix__DatePicker__ArrivalDate")).getAttribute("value");
+	String []ReturnDatesplit = ReturnFullDate.split(",");
+	String DatewithoutDay = ReturnDatesplit[1].trim();
+	String [] Datenumber = DatewithoutDay.split(" ");
+	String date = Datenumber[0];
+	//System.out.print(date);
+    int actualReturnDate = Integer.parseInt(date);
+    Assert.assertEquals(actualReturnDate, expectedReturnDate);
+
+	
+	
 	
 }
-@Test (priority = 2)
-public void checkReturneDate () {
-	LocalDate today = LocalDate.now(); //Wed, 6 Aug
-	int expectedReturnDate = today.plusDays(2).getDayOfMonth();
-	
-	String fullReturnDate = driver.findElement(By.id("testIdPickerPrefix__DatePicker__ArrivalDate")).getAttribute("value");
-	String []dateParts = fullReturnDate.split(","); 
-	String Daydate = dateParts[1].trim();
-	String []datewithoutDay = Daydate.split(" ");
-	String finalDate = datewithoutDay[0];
-    int ActualReturnDate = Integer.parseInt(finalDate);
-    Assert.assertEquals(ActualReturnDate, expectedReturnDate);
-	
-	
-	
-	
-	
-}
+
+
+
+
 
 
 
