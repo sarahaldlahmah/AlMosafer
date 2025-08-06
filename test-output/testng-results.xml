@@ -1,24 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="7" total="9" passed="2" failed="0" skipped="0">
+<testng-results ignored="7" total="12" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-08-05T02:17:59 EET" name="Default suite" finished-at="2025-08-05T02:18:03 EET" duration-ms="4560">
+  <suite started-at="2025-08-07T01:50:52 EET" name="Default suite" finished-at="2025-08-07T01:50:59 EET" duration-ms="6980">
     <groups>
     </groups>
-    <test started-at="2025-08-05T02:17:59 EET" name="Default test" finished-at="2025-08-05T02:18:03 EET" duration-ms="4560">
+    <test started-at="2025-08-07T01:50:52 EET" name="Default test" finished-at="2025-08-07T01:50:59 EET" duration-ms="6980">
       <class name="myTestCasese">
-        <test-method is-config="true" signature="setup()[pri:0, instance:myTestCasese@63f8276e]" started-at="2025-08-05T02:17:59 EET" name="setup" finished-at="2025-08-05T02:18:03 EET" duration-ms="4435" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:myTestCasese@497486b3]" started-at="2025-08-07T01:50:52 EET" name="setup" finished-at="2025-08-07T01:50:57 EET" duration-ms="4732" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="ChecktheDepartureDateisCorrect()[pri:1, instance:myTestCasese@63f8276e]" started-at="2025-08-05T02:18:03 EET" name="ChecktheDepartureDateisCorrect" finished-at="2025-08-05T02:18:03 EET" duration-ms="64" status="PASS">
+        <test-method signature="CheckLangisSelectedRandomly()[pri:3, instance:myTestCasese@497486b3]" started-at="2025-08-07T01:50:57 EET" name="CheckLangisSelectedRandomly" finished-at="2025-08-07T01:50:57 EET" duration-ms="473" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ChecktheDepartureDateisCorrect -->
-        <test-method signature="CheckTheReturnDateisCorrect()[pri:2, instance:myTestCasese@63f8276e]" started-at="2025-08-05T02:18:03 EET" name="CheckTheReturnDateisCorrect" finished-at="2025-08-05T02:18:03 EET" duration-ms="24" status="PASS">
+        </test-method> <!-- CheckLangisSelectedRandomly -->
+        <test-method signature="CheckLangisSelectedRandomly()[pri:3, instance:myTestCasese@497486b3]" started-at="2025-08-07T01:50:57 EET" name="CheckLangisSelectedRandomly" finished-at="2025-08-07T01:50:58 EET" duration-ms="545" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CheckTheReturnDateisCorrect -->
+        </test-method> <!-- CheckLangisSelectedRandomly -->
+        <test-method signature="CheckLangisSelectedRandomly()[pri:3, instance:myTestCasese@497486b3]" started-at="2025-08-07T01:50:58 EET" name="CheckLangisSelectedRandomly" finished-at="2025-08-07T01:50:58 EET" duration-ms="401" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckLangisSelectedRandomly -->
+        <test-method signature="CheckLangisSelectedRandomly()[pri:3, instance:myTestCasese@497486b3]" started-at="2025-08-07T01:50:58 EET" name="CheckLangisSelectedRandomly" finished-at="2025-08-07T01:50:59 EET" duration-ms="401" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckLangisSelectedRandomly -->
+        <test-method signature="CheckLangisSelectedRandomly()[pri:3, instance:myTestCasese@497486b3]" started-at="2025-08-07T01:50:59 EET" name="CheckLangisSelectedRandomly" finished-at="2025-08-07T01:50:59 EET" duration-ms="399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckLangisSelectedRandomly -->
       </class> <!-- myTestCasese -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

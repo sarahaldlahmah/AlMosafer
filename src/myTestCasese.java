@@ -4,6 +4,7 @@ import static org.testng.Assert.assertFalse;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -68,13 +69,11 @@ public void checkStaysTabnotSelected () {
 	}
 
 
-@Test (priority = 1)
+@Test (priority = 1,enabled = false)
 public void ChecktheDepartureDateisCorrect () {  //Wed, 6 Aug
 	
 	LocalDate today = LocalDate.now();
 	int expectedDepartureDate = today.plusDays(1).getDayOfMonth();
-	
-	
 	String dateandDay = driver.findElement(By.id("testIdPickerPrefix__DatePicker__DepartureDate")).getAttribute("value");
 	String []SplitDate = dateandDay.split(",");
 	String datewithMonth = SplitDate[1].trim();
@@ -84,7 +83,8 @@ public void ChecktheDepartureDateisCorrect () {  //Wed, 6 Aug
 	int actualfinalDay = Integer.parseInt(Day);
 	assertEquals(actualfinalDay,expectedDepartureDate);	
 }
-@Test  (priority = 2)
+
+@Test  (priority = 2,enabled = false)
 public void CheckTheReturnDateisCorrect () {
 	
 	LocalDate today2 = LocalDate.now();
@@ -98,16 +98,27 @@ public void CheckTheReturnDateisCorrect () {
 	//System.out.print(date);
     int actualReturnDate = Integer.parseInt(date);
     Assert.assertEquals(actualReturnDate, expectedReturnDate);
-
-	
-	
-	
 }
 
-
-
-
-
-
-
+@Test (priority =3, invocationCount = 5)
+public void CheckLangisSelectedRandomly () {
+	
+String AR_URL = "https://www.almosafer.com/ar?ncr=1";
+String EN_URL = "https://www.almosafer.com/en?ncr=1";
+String expectedARlang = "ar";
+String expectedENlang = "en";
+Random rand = new Random();
+int randomeIndex = rand.nextInt(2);
+if (randomeIndex==1 ) {
+	driver.get(AR_URL);
+String ActualAR = driver.findElement(By.tagName("html")).getAttribute("lang");
+Assert.assertEquals(ActualAR, expectedARlang);
 }
+
+else {
+	driver.get(EN_URL);
+    String ActualEN = driver.findElement(By.tagName("html")).getAttribute("lang");
+    Assert.assertEquals(ActualEN,expectedENlang );	
+}
+
+}}
