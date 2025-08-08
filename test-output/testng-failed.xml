@@ -5,8 +5,8 @@
     <classes>
       <class name="myTestCasese">
         <methods>
-          <include name="checkStaysTabnotSelected"/>
           <include name="setup"/>
+          <include name="checkTheHotelTab"/>
         </methods>
       </class> <!-- myTestCasese -->
     </classes>

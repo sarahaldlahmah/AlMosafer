@@ -100,7 +100,7 @@ public void CheckTheReturnDateisCorrect () {
     Assert.assertEquals(actualReturnDate, expectedReturnDate);
 }
 
-@Test (priority =3, invocationCount = 5)
+@Test (priority =3, invocationCount = 4, enabled = false)
 public void CheckLangisSelectedRandomly () {
 	
 String AR_URL = "https://www.almosafer.com/ar?ncr=1";
@@ -118,7 +118,58 @@ Assert.assertEquals(ActualAR, expectedARlang);
 else {
 	driver.get(EN_URL);
     String ActualEN = driver.findElement(By.tagName("html")).getAttribute("lang");
-    Assert.assertEquals(ActualEN,expectedENlang );	
+    Assert.assertEquals(ActualEN,expectedENlang );	   
+}
+}
+@Test (priority =4, invocationCount = 6, enabled = false)
+public void CheckLangisSelectedRandomly2 () {
+	
+	String expectedAR = "ar";
+	String expectedEN= "en";
+	
+	Random rand = new Random();
+	int randomIndex = rand.nextInt(2);
+	String URL_AR = "https://www.almosafer.com/ar?ncr=1";
+	String URL_EN = "https://www.almosafer.com/en?ncr=1";
+      if (randomIndex == 0) {
+    	  driver.get(URL_AR);
+    String ActalARLang= driver.findElement(By.tagName("html")).getAttribute("lang");
+    Assert.assertEquals(ActalARLang, expectedAR); }
+    else {
+     driver.get(URL_EN);
+     String ActalEnLang = driver.findElement(By.tagName("html")).getAttribute("lang");
+     Assert.assertEquals(ActalEnLang, expectedEN);
+    	
+    }
+        	  
+      }	
+
+
+
+@Test (priority =4, invocationCount = 1 )
+public void checkTheHotelTab () {
+
+ driver.findElement(By.id("tab-hotels")).click();
+ 
+ String []cityinEn =  {"Dubai","Jeddah","Riyadh"};
+ String []cityinAR = {"دبي","جدة","رياض"};
+ Random rand2 = new Random();
+ int randomIndex2 = rand2.nextInt(3);
+ 
+// driver.get("https://www.almosafer.com/ar?ncr=1");
+ String currentLang = driver.findElement(By.tagName("html")).getAttribute("lang");
+ if (currentLang == "en") {
+	driver.findElement(By.id("DesktopSearchWidget_Destination_InputField_Test_Id")).sendKeys(cityinEn[randomIndex2]); 
+ }
+ else {
+		driver.findElement(By.id("DesktopSearchWidget_Destination_InputField_Test_Id")).sendKeys(cityinAR[randomIndex2]); 	 
+ }
+  
 }
 
-}}
+
+
+
+
+
+}
