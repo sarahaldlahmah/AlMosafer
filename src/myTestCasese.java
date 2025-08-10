@@ -121,7 +121,7 @@ else {
     Assert.assertEquals(ActualEN,expectedENlang );	   
 }
 }
-@Test (priority =4, invocationCount = 6, enabled = false)
+@Test (priority =4, invocationCount = 4, enabled = false)
 public void CheckLangisSelectedRandomly2 () {
 	
 	String expectedAR = "ar";
@@ -146,23 +146,29 @@ public void CheckLangisSelectedRandomly2 () {
 
 
 
-@Test (priority =4, invocationCount = 1 )
+@Test (priority =4, invocationCount = 6 )
 public void checkTheHotelTab () {
 
- driver.findElement(By.id("tab-hotels")).click();
+ //driver.findElement(By.id("tab-hotels")).click();
  
  String []cityinEn =  {"Dubai","Jeddah","Riyadh"};
  String []cityinAR = {"دبي","جدة","رياض"};
  Random rand2 = new Random();
- int randomIndex2 = rand2.nextInt(3);
+ int randomIndexforEn = rand2.nextInt(cityinEn.length);
+ int randomIndexforAR = rand2.nextInt(cityinAR.length);
  
-// driver.get("https://www.almosafer.com/ar?ncr=1");
+ 
+driver.get("https://www.almosafer.com/ar?ncr=1");
+driver.findElement(By.id("tab-hotels")).click();
+
  String currentLang = driver.findElement(By.tagName("html")).getAttribute("lang");
- if (currentLang == "en") {
-	driver.findElement(By.id("DesktopSearchWidget_Destination_InputField_Test_Id")).sendKeys(cityinEn[randomIndex2]); 
+// System.out.println("************"+ currentLang);
+ if (currentLang.contains("en")) {
+	driver.findElement(By.id("DesktopSearchWidget_Destination_InputField_Test_Id")).sendKeys(cityinEn[randomIndexforEn]);
  }
  else {
-		driver.findElement(By.id("DesktopSearchWidget_Destination_InputField_Test_Id")).sendKeys(cityinAR[randomIndex2]); 	 
+		driver.findElement(By.id("DesktopSearchWidget_Destination_InputField_Test_Id")).sendKeys(cityinAR[randomIndexforAR]);
+
  }
   
 }
