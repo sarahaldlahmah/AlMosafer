@@ -1,12 +1,15 @@
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -146,9 +149,8 @@ public void CheckLangisSelectedRandomly2 () {
 
 
 
-@Test (priority =4, invocationCount = 6 )
+@Test (priority =4, invocationCount = 1, enabled = true)
 public void checkTheHotelTab () {
-
  //driver.findElement(By.id("tab-hotels")).click();
  
  String []cityinEn =  {"Dubai","Jeddah","Riyadh"};
@@ -158,7 +160,7 @@ public void checkTheHotelTab () {
  int randomIndexforAR = rand2.nextInt(cityinAR.length);
  
  
-driver.get("https://www.almosafer.com/ar?ncr=1");
+//driver.get("https://www.almosafer.com/ar?ncr=1");
 driver.findElement(By.id("tab-hotels")).click();
 
  String currentLang = driver.findElement(By.tagName("html")).getAttribute("lang");
@@ -168,14 +170,26 @@ driver.findElement(By.id("tab-hotels")).click();
  }
  else {
 		driver.findElement(By.id("DesktopSearchWidget_Destination_InputField_Test_Id")).sendKeys(cityinAR[randomIndexforAR]);
+ }		
+List <WebElement> suggestions = driver.findElements(By.cssSelector(".__ds__comp.undefined.MuiBox-root.alm-desktop-j7qwjs"));
+//System.out.println(suggestions.size()+"***********");
+suggestions.get(0).click();
 
- }
-  
+
+ 
 }
-
-
-
-
-
-
+ 
+ @Test (priority =5, invocationCount = 1, enabled = true)
+ public void ChecknumberOfPeopleIsCorrect() {
+	driver.findElement(By.cssSelector(".__ds__comp.undefined.MuiBox-root.alm-desktop-itulbq")).click();
+	List <WebElement> options = driver.findElements(By.cssSelector(".__ds__comp.undefined.MuiBox-root.alm-desktop-16wwg55"));
+	
+	Random rand4= new Random();
+	int index = rand4.nextInt(options.size());
+	if (index == 0)
+		options.get(index).click();
+	else if  (index == 1)
+		options.get(index).click();	
+}
+ 
 }

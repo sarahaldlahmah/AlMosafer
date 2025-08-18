@@ -6,7 +6,7 @@
       <class name="myTestCasese">
         <methods>
           <include name="setup"/>
-          <include name="checkTheHotelTab"/>
+          <include name="ChecknumberOfPeopleIsCorrect"/>
         </methods>
       </class> <!-- myTestCasese -->
     </classes>
