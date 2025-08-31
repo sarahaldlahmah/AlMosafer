@@ -13,6 +13,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -147,8 +150,6 @@ public void CheckLangisSelectedRandomly2 () {
         	  
       }	
 
-
-
 @Test (priority =4, invocationCount = 1, enabled = true)
 public void checkTheHotelTab () {
  //driver.findElement(By.id("tab-hotels")).click();
@@ -174,9 +175,6 @@ driver.findElement(By.id("tab-hotels")).click();
 List <WebElement> suggestions = driver.findElements(By.cssSelector(".__ds__comp.undefined.MuiBox-root.alm-desktop-j7qwjs"));
 //System.out.println(suggestions.size()+"***********");
 suggestions.get(0).click();
-
-
- 
 }
  
  @Test (priority =5, invocationCount = 1, enabled = true)
@@ -192,4 +190,22 @@ suggestions.get(0).click();
 		options.get(index).click();	
 }
  
+ @Test (priority = 6)
+ public void checkTheSearchResult () {
+	 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+     driver.findElement(By.cssSelector(".MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedCoral100.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedCoral100.MuiButton-sizeMedium.MuiButton-containedSizeMedium.__ds__comp.alm-desktop-r5xm0l")).click();
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(1));
+	 WebElement searchElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".MuiTypography-root.MuiTypography-heading4SemBld.__ds__comp.undefined.muiltr-13ipltw"))); 
+	 Assert.assertEquals(searchElement.getText().contains("found") || searchElement.getText().contains("وجدنا"), true);  	  	 
+	 
+ }
+ 
+ @Test (priority = 7, enabled = false)
+ public void checkSortingLtoH () {
+	// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+     //driver.findElement(By.cssSelector(".MuiButtonBase-root.MuiChip-root.MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault.MuiChip-clickable.MuiChip-clickableColorDefault.MuiChip-filledDefault.__ds__comp.Mui-checked.muiltr-1cepr2t")).click();
+     
+	 
+	 
+ }
 }

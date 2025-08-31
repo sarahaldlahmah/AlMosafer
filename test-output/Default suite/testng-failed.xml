@@ -5,8 +5,8 @@
     <classes>
       <class name="myTestCasese">
         <methods>
+          <include name="checkTheSearchResult"/>
           <include name="setup"/>
-          <include name="ChecknumberOfPeopleIsCorrect"/>
         </methods>
       </class> <!-- myTestCasese -->
     </classes>
