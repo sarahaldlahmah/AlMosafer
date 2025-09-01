@@ -192,11 +192,15 @@ suggestions.get(0).click();
  
  @Test (priority = 6)
  public void checkTheSearchResult () {
-	 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-     driver.findElement(By.cssSelector(".MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedCoral100.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedCoral100.MuiButton-sizeMedium.MuiButton-containedSizeMedium.__ds__comp.alm-desktop-r5xm0l")).click();
+  /*   driver.findElement(By.cssSelector(".MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedCoral100.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedCoral100.MuiButton-sizeMedium.MuiButton-containedSizeMedium.__ds__comp.alm-desktop-r5xm0l")).click();
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(1));
 	 WebElement searchElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".MuiTypography-root.MuiTypography-heading4SemBld.__ds__comp.undefined.muiltr-13ipltw"))); 
 	 Assert.assertEquals(searchElement.getText().contains("found") || searchElement.getText().contains("وجدنا"), true);  	  	 
+	*/
+	 driver.findElement(By.cssSelector(".MuiButtonBase-root.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedCoral100.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiLoadingButton-root.MuiButton-contained.MuiButton-containedCoral100.MuiButton-sizeMedium.MuiButton-containedSizeMedium.__ds__comp.alm-desktop-r5xm0l")).click(); 
+	 WebDriverWait wait = new WebDriverWait(driver, Duration.ofMinutes(1));
+	 WebElement searchResult = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(".MuiTypography-root.MuiTypography-heading4SemBld.__ds__comp.undefined.muiltr-13ipltw")));
+	 Assert.assertEquals(searchResult.getText().contains("found") || searchResult.getText().contains("وجدنا"),true);  
 	 
  }
  
