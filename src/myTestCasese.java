@@ -5,6 +5,8 @@ import static org.testng.Assert.assertTrue;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -19,6 +21,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import net.bytebuddy.agent.builder.AgentBuilder.InitializationStrategy.SelfInjection.Split;
 
 public class myTestCasese {
 
@@ -204,12 +208,27 @@ suggestions.get(0).click();
 	 
  }
  
- @Test (priority = 7, enabled = false)
+ @Test (priority = 7, enabled = true)
  public void checkSortingLtoH () {
-	// driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
-     //driver.findElement(By.cssSelector(".MuiButtonBase-root.MuiChip-root.MuiChip-filled.MuiChip-sizeMedium.MuiChip-colorDefault.MuiChip-clickable.MuiChip-clickableColorDefault.MuiChip-filledDefault.__ds__comp.Mui-checked.muiltr-1cepr2t")).click();
-     
-	 
-	 
+	driver.findElement(By.xpath("//div [@data-testid = 'srp_sort_LOWEST_PRICE']")).click();
+	List <WebElement> listofPrices = driver.findElements(By.cssSelector(".MuiTypography-root.MuiTypography-heading3SemBld.__ds__comp.undefined.muiltr-18vmb2l"));
+	List <Double> thePricesasNumbers = new ArrayList<Double>();
+	for (int i = 0; i<listofPrices.size(); i++)
+	{
+		if (listofPrices.get(i).getText().contains("Search"))
+			continue;
+		String number = listofPrices.get(i).getText().replace("⃀","").trim();
+		Double numbers = (Double) Double.parseDouble(number) ;
+		thePricesasNumbers.add(numbers);	
+	}
+	
+	System.out.println(thePricesasNumbers);
+	List <Double> sortedList = new ArrayList<Double>(thePricesasNumbers);
+	Collections.sort(sortedList);
+	Assert.assertEquals(thePricesasNumbers,sortedList);
+	
+	
  }
+ 
+ 
 }

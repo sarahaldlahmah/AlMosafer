@@ -5,7 +5,7 @@
     <classes>
       <class name="myTestCasese">
         <methods>
-          <include name="checkTheSearchResult"/>
+          <include name="checkSortingLtoH"/>
           <include name="setup"/>
         </methods>
       </class> <!-- myTestCasese -->
